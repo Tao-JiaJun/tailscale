@@ -10,10 +10,10 @@ ENV BRANCH=main
 
 # build modified derper
 RUN git clone -b $BRANCH $MODIFIED_DERPER_GIT tailscale --depth 1 && \
-    cd /app/tailscale/cmd/derper && \
+    cd /app/tailscale/tailscale/cmd/derper && \
     /usr/local/go/bin/go build -ldflags "-s -w" -o /app/derper && \
     cd /app && \
-    rm -rf /app/tailscale
+    rm -rf /app/tailscale/tailscale
 
 FROM ubuntu:20.04
 WORKDIR /app
