@@ -8,7 +8,7 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
-	container: docker.io/centos:8
+	  container: docker.io/centos:8
     steps:
       -
         name: Checkout
