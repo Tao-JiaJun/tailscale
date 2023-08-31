@@ -4,8 +4,8 @@ WORKDIR /app
 
 # ========= CONFIG =========
 # - download links
-ENV MODIFIED_DERPER_GIT=github.com/Tao-JiaJun/ip_derper.git
-ENV BRANCH=ip_derper
+ENV MODIFIED_DERPER_GIT=github.com/Tao-JiaJun/tailscale.git
+ENV BRANCH=main
 # ==========================
 
 # build modified derper
