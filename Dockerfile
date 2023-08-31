@@ -27,8 +27,7 @@ ENV DERP_VERIFY_CLIENTS false
 # ==========================
 
 # apt
-RUN yum update && \
-    yum install -y openssl openssl-devel curl
+RUN yum -y install openssl openssl-devel curl
 
 COPY build_cert.sh /app/
 COPY --from=builder /app/derper /app/derper
