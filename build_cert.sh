@@ -1,5 +1,3 @@
-# build_cert.sh
-
 #!/bin/bash
 
 CERT_HOST=$1

@@ -4,10 +4,9 @@ WORKDIR /app
 
 # ========= CONFIG =========
 # - download links
-ENV MODIFIED_DERPER_GIT=https://github.com/Tao-JiaJun/tailscale.git 
-ENV BRANCH=main 
+ENV MODIFIED_DERPER_GIT=https://github.com/Tao-JiaJun/ip_derper.git
+ENV BRANCH=ip_derper
 # ==========================
-
 
 # build modified derper
 RUN git clone -b $BRANCH $MODIFIED_DERPER_GIT tailscale --depth 1 && \
