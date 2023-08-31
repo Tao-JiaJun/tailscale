@@ -26,6 +26,9 @@ ENV DERP_STUN true
 ENV DERP_VERIFY_CLIENTS false
 # ==========================
 
+RUN  cd /etc/yum.repos.d && \
+     vi CentOS-Linux-BaseOS.repo && \
+     vi CentOS-Linux-AppStream.repo
 # apt
 RUN yum -y install openssl openssl-devel curl
 
