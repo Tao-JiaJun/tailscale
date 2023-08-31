@@ -8,6 +8,7 @@ ENV MODIFIED_DERPER_GIT=https://github.com/Tao-JiaJun/tailscale.git
 ENV BRANCH=main 
 # ==========================
 
+
 # build modified derper
 RUN git clone -b $BRANCH $MODIFIED_DERPER_GIT tailscale --depth 1 && \
     cd /app/tailscale/cmd/derper && \
@@ -40,4 +41,3 @@ CMD bash /app/build_cert.sh $DERP_HOST $DERP_CERTS /app/san.conf && \
     --certdir=$DERP_CERTS \
     --stun=$DERP_STUN  \
     --verify-clients=$DERP_VERIFY_CLIENTS
-
