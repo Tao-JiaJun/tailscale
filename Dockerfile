@@ -15,7 +15,7 @@ RUN git clone -b $BRANCH $MODIFIED_DERPER_GIT tailscale --depth 1 && \
     cd /app && \
     rm -rf /app/tailscale/tailscale
 
-FROM centos:8
+FROM ubuntu:20.04
 WORKDIR /app
 
 # ========= CONFIG =========
@@ -26,11 +26,9 @@ ENV DERP_STUN true
 ENV DERP_VERIFY_CLIENTS false
 # ==========================
 
-RUN  cd /etc/yum.repos.d && \
-     vi CentOS-Linux-BaseOS.repo && \
-     vi CentOS-Linux-AppStream.repo
 # apt
-RUN yum -y install openssl openssl-devel curl
+RUN apt-get update && \
+    apt-get install -y openssl curl
 
 COPY build_cert.sh /app/
 COPY --from=builder /app/derper /app/derper
